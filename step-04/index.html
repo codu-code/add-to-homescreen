@@ -1,0 +1,35 @@
+<!DOCTYPE html public "display of affection from creativejs">
+  <head>
+    <meta charset="uft-8" />
+    <meta name="theme-color" content="#536878" />
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Fireworks!</title>
+    <link href="css/fireworks.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+  </head>
+
+  <body>
+
+    <!-- Hiding library elements in the DOM is fun -->
+    <aside id="library">
+      <img src="images/nightsky.png" id="nightsky" />
+      <img src="images/big-glow.png" id="big-glow" />
+      <img src="images/small-glow.png" id="small-glow" />
+    </aside>
+    <main id="welcome-back" class="isPaused">
+      <h1>Welcome back!</h1>
+    </main>
+  </body>
+  <script src="js/requestanimframe.js"></script>
+  <script src="js/fireworks.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      console.log("Will service worker register?");
+      navigator.serviceWorker.register('service-worker.js').then(function(reg){
+        console.log("Yes it did.", reg);
+      }).catch(function(err) {
+        console.log("No it didn't. This happened: ", err)
+      });
+    }
+  </script>
+</html>
